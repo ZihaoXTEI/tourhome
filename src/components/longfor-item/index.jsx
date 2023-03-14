@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
+
 import { LongForItemWrapper } from './style'
 
 const LongForItem = memo((props) => {

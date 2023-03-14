@@ -4,6 +4,7 @@ export const RoomItemWrapper = styled.div`
 	flex-shrink: 0;
 	box-sizing: border-box;
 	width: ${(props) => props.itemWidth};
+	padding: 8px;
 
 	.inner {
 		width: 100%;
@@ -40,7 +41,6 @@ export const RoomItemWrapper = styled.div`
 		/* 左右控制按钮 */
 		.control {
 			position: absolute;
-			z-index: 1;
 			left: 0;
 			right: 0;
 			top: 0;
@@ -48,6 +48,7 @@ export const RoomItemWrapper = styled.div`
 			justify-content: space-between;
 			bottom: 0;
 			color: #fff;
+			z-index: 1;
 
 			.btn {
 				display: flex;
@@ -69,33 +70,33 @@ export const RoomItemWrapper = styled.div`
 					);
 				}
 			}
+		}
 
-			/* 指示器 */
-			.indicator {
-				position: absolute;
-				z-index: 9;
-				bottom: 10px;
-				left: 0;
-				right: 0;
-				width: 30%;
-				margin: 0 auto;
+		/* 指示器 */
+		.indicator {
+			position: absolute;
+			z-index: 9;
+			bottom: 10px;
+			left: 0;
+			right: 0;
+			width: 30%;
+			margin: 0 auto;
 
-				.item {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					width: 14.29%;
+			.item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 14.29%;
 
-					.dot {
-						width: 6px;
-						height: 6px;
-						background-color: #fff;
-						border-radius: 50%;
+				.dot {
+					width: 6px;
+					height: 6px;
+					background-color: #fff;
+					border-radius: 50%;
 
-						&.active {
-							width: 8px;
-							height: 8px;
-						}
+					&.active {
+						width: 8px;
+						height: 8px;
 					}
 				}
 			}

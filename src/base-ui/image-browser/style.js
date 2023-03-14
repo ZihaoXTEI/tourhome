@@ -2,16 +2,16 @@ import styled from 'styled-components'
 
 export const ImageBrowserWrapper = styled.div`
 	position: fixed;
-	z-index: 999;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
-
 	background-color: #333;
+	z-index: 999;
 
+	/* 顶部关闭按钮 */
 	.top {
 		position: relative;
 		height: 86px;
@@ -24,6 +24,7 @@ export const ImageBrowserWrapper = styled.div`
 		}
 	}
 
+	/* 中间轮播图 */
 	.slider {
 		position: relative;
 		display: flex;
@@ -91,6 +92,7 @@ export const ImageBrowserWrapper = styled.div`
 		}
 	}
 
+	/* 底部图片列表 */
 	.preview {
 		display: flex;
 		justify-content: center;

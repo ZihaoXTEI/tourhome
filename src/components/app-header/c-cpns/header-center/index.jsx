@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'
 import { CSSTransition } from "react-transition-group"
 
-import SearchLabels from "@/assets/data/search-labels"
 import { HeaderCenterWrapper } from './style'
+import SearchLabels from "@/assets/data/search-labels"
 import IconSearchBar from '@/assets/svg/icon-search-bar'
 import SearchTab from './c-cpns/search-tab'
 import SearchSection from './c-cpns/search-section'
@@ -27,6 +27,7 @@ const HeaderCenter = memo((props) => {
         timeout={250}
         unmountOnExit={true}
       >
+        {/* 默认样式 */}
         <div className="search-bar" onClick={searchBarClickHandle}>
           <div className="text">搜索房源和体验</div>
           <div className="icon">
@@ -41,9 +42,10 @@ const HeaderCenter = memo((props) => {
         timeout={250}
         unmountOnExit={true}
       >
+        {/* 搜索详情样式 */}
         <div className="search-detail">
-          <SearchTab labelList={labelList} onSearchBarClick={setTabIndex} />
-          <div className="info">
+          <SearchTab labelList={labelList} onTabClick={setTabIndex} />
+          <div className="search-section">
             <SearchSection searchInfoList={SearchLabels[tabIndex].searchInfos} />
           </div>
         </div>

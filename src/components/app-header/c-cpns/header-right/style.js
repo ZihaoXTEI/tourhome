@@ -39,6 +39,7 @@ export const HeaderRightWrapper = styled.div`
 		height: 42px;
 		margin-right: 24px;
 		border: 1px solid #ccc;
+		border-radius: 25px;
 		background-color: #fff;
 		color: ${(props) => props.theme.text.primaryColor};
 		cursor: pointer;
@@ -55,8 +56,8 @@ export const HeaderRightWrapper = styled.div`
 			box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 			color: #666;
 
-			.top,
-			.bottom {
+			> .top-box,
+			.bottom-box {
 				padding: 10px 0;
 
 				.item {
@@ -70,8 +71,12 @@ export const HeaderRightWrapper = styled.div`
 				}
 			}
 
-			.top {
+			.top-box {
 				border-bottom: 1px solid #ddd;
+			}
+
+			.bottom-box {
+				font-weight: 400;
 			}
 		}
 	}

@@ -2,7 +2,7 @@ import myRequest from '..'
 
 export function getHomeGoodPriceData() {
 	return myRequest.get({
-		url: '/home/goodpric'
+		url: '/home/goodprice'
 	})
 }
 

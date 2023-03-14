@@ -1,12 +1,13 @@
-import IconArrowLeft from '@/assets/svg/icon-arrow-left'
-import IconArrowRight from '@/assets/svg/icon-arrow-right'
-import Indicator from '@/base-ui/indicator'
+import PropTypes from 'prop-types'
+import React, { memo, useRef, useState } from 'react'
 import { Rating } from '@mui/material'
 import { Carousel } from 'antd'
 import classNames from 'classnames'
-import PropTypes from 'prop-types'
-import React, { memo, useRef, useState } from 'react'
+
 import { RoomItemWrapper } from './style'
+import IconArrowLeft from '@/assets/svg/icon-arrow-left'
+import IconArrowRight from '@/assets/svg/icon-arrow-right'
+import Indicator from '@/base-ui/indicator'
 
 const RoomItem = memo((props) => {
   const { itemData, itemWidth = '25%', onItemClick } = props
@@ -15,7 +16,7 @@ const RoomItem = memo((props) => {
 
   // item 点击事件
   function itemClickHandle () {
-    if (onItemClick) onItemClick()
+    if (onItemClick) onItemClick(itemData)
   }
 
   // item 左右控制按钮事件
@@ -32,6 +33,8 @@ const RoomItem = memo((props) => {
     }
 
     nextIndex = nextIndex % length
+    if (nextIndex < 0) nextIndex = length - 1
+
     setSelectIndex(nextIndex)
     // 阻止事件冒泡
     event.stopPropagation()
@@ -72,7 +75,7 @@ const RoomItem = memo((props) => {
         </Indicator>
       </div>
       {/* 轮播图 */}
-      <Carousel>
+      <Carousel dots={false} ref={sliderRef}>
         {
           itemData?.picture_urls?.map(item => {
             return (

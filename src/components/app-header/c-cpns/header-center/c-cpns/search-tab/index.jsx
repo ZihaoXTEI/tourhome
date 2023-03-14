@@ -1,6 +1,7 @@
-import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'
+import classNames from 'classnames'
+
 import { SearchTabWrapper } from './style'
 
 const SearchTab = memo((props) => {

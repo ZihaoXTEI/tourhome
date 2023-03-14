@@ -14,7 +14,7 @@ export const SearchSectionWrapper = styled.div`
 		flex: 1;
 		border-radius: 32px;
 
-		.item {
+		.info {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;

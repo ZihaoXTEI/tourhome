@@ -7,10 +7,10 @@ export function useScrollPosition() {
 	const [scrollY, setScrollY] = useState(0)
 
 	useEffect(() => {
-		const windowScrollhandle = throttle(() => {
-			setScrollX(window.screenX)
-			setScrollY(window.screenY)
-		})
+		const windowScrollhandle = throttle(function () {
+			setScrollX(window.scrollX)
+			setScrollY(window.scrollY)
+		}, 100)
 
 		window.addEventListener('scroll', windowScrollhandle)
 

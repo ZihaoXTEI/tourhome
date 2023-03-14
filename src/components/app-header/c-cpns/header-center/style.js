@@ -43,7 +43,7 @@ export const HeaderCenterWrapper = styled.div`
 		transform-origin: 50% 0;
 		will-change: transform, opacity;
 
-		.info {
+		.search-section {
 			position: absolute;
 			top: 60px;
 			left: 50%;

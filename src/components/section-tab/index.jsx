@@ -1,8 +1,9 @@
-import ScrollView from '@/base-ui/scroll-view'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'
+
 import { SectionTabWrapper } from './style'
+import ScrollView from '@/base-ui/scroll-view'
 
 const SectionTab = memo((props) => {
   const { labelList, onTabClick } = props

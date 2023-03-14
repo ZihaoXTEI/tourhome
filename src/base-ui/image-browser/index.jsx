@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import React, { memo, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { CSSTransition, SwitchTransition } from "react-transition-group"
-import Indicator from '../indicator'
 
 import { ImageBrowserWrapper } from './style'
+import Indicator from '../indicator'
 import IconArrowLeft from '@/assets/svg/icon-arrow-left'
 import IconArrowRight from '@/assets/svg/icon-arrow-right'
 import IconClose from '@/assets/svg/icon-close'
@@ -12,7 +12,7 @@ import IconTriangleArrowBottom from '@/assets/svg/icon-triangle-arrow-bottom'
 import IconTriangleArrowTop from '@/assets/svg/icon-triangle-arrow-top'
 
 const ImageBrowser = memo((props) => {
-  const { imageUrls, closeClick } = props
+  const { imageUrls, onCloseClick } = props
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isNext, setIsNext] = useState(true)
   const [showList, setShowList] = useState(true)
@@ -28,13 +28,17 @@ const ImageBrowser = memo((props) => {
 
   // 事件处理
   function closeBtnClickHandle () {
-    if (closeClick) closeClick()
+    if (onCloseClick) onCloseClick()
   }
 
   function controlClickHandle (isRight = true) {
     let nextIndex = isRight ? currentIndex + 1 : currentIndex - 1
+    // 溢出处理
     if (nextIndex < 0) nextIndex = imageUrls.length - 1
     else if (nextIndex > imageUrls.length - 1) nextIndex = 0
+
+    setCurrentIndex(nextIndex)
+    setIsNext(isRight)
   }
 
   function bottomItemClickHandle (index) {
@@ -51,7 +55,7 @@ const ImageBrowser = memo((props) => {
         </div>
       </div>
 
-      {/* 中间滚动区域 */}
+      {/* 中间轮播图区域 */}
       <div className="slider">
         {/* 控制按钮 */}
         <div className="control">
@@ -84,7 +88,7 @@ const ImageBrowser = memo((props) => {
           <div className="desc">
             <div className="count">
               <span>{currentIndex + 1}/{imageUrls.length}:</span>
-              <span>Room Apartment 图片 {imageUrls + 1}</span>
+              <span>Room Apartment 图片 {currentIndex + 1}</span>
             </div>
             <div className="toggle" onClick={e => setShowList(!showList)}>
               <span>{showList ? '隐藏' : '显示'}照片列表</span>
@@ -117,7 +121,7 @@ const ImageBrowser = memo((props) => {
 
 ImageBrowser.propTypes = {
   imageUrls: PropTypes.array,
-  closeClick: PropTypes.func
+  onCloseClick: PropTypes.func
 }
 
 export default ImageBrowser

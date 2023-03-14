@@ -53,7 +53,7 @@ const ScrollView = memo((props) => {
       {/* 右侧控制按钮 */}
       {showRight && (
         <div
-          className='control left'
+          className='control right'
           onClick={e => controlClickHandle(true)}
         >
           <IconArrowRight />

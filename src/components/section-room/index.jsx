@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
+
 import RoomItem from '../room-item'
 import { SectionRoomWrapper } from './style'
 
@@ -21,7 +22,7 @@ const SectionRoom = memo((props) => {
 
 SectionRoom.propTypes = {
   roomList: PropTypes.array,
-  itemWidth: PropTypes.number
+  itemWidth: PropTypes.string
 }
 
 export default SectionRoom

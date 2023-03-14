@@ -1,8 +1,9 @@
-import { useScrollPosition } from '@/hooks'
-import classNames from 'classnames'
 import React, { memo, useRef, useState } from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
+import classNames from 'classnames'
 import { ThemeProvider } from 'styled-components'
+
+import { useScrollPosition } from '@/hooks'
 import HeaderCenter from './c-cpns/header-center'
 import HeaderLeft from './c-cpns/header-left'
 import HeaderRight from './c-cpns/header-right'

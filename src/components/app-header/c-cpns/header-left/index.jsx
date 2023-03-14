@@ -1,6 +1,8 @@
-import IconLogo from '@/assets/svg/icon-logo'
 import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+import { HeaderLeftWrapper } from './style'
+import IconLogo from '@/assets/svg/icon-logo'
 
 const HeaderLeft = memo(() => {
 
@@ -11,11 +13,11 @@ const HeaderLeft = memo(() => {
   }
 
   return (
-    <HeaderLeft>
+    <HeaderLeftWrapper>
       <div className="logo" onClick={logoClickHandle}>
         <IconLogo />
       </div>
-    </HeaderLeft>
+    </HeaderLeftWrapper>
   )
 })
 

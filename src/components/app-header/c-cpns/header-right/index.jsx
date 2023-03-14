@@ -1,8 +1,9 @@
+import React, { memo, useEffect, useState } from 'react'
+
+import { HeaderRightWrapper } from './style'
 import IconAvatar from '@/assets/svg/icon-avatar'
 import IconGlobal from '@/assets/svg/icon-global'
 import IconMenu from '@/assets/svg/icon-menu'
-import React, { memo, useEffect, useState } from 'react'
-import { HeaderRightWrapper } from './style'
 
 const HeaderRight = memo(() => {
   const [showPanel, setShowPanel] = useState(false)
@@ -42,11 +43,11 @@ const HeaderRight = memo(() => {
 
         {showPanel && (
           <div className="panel">
-            <div className="top">
+            <div className="top-box">
               <div className="item">注册</div>
               <div className="item">登录</div>
             </div>
-            <div className="bottom">
+            <div className="bottom-box">
               <div className="item">出租房源</div>
               <div className="item">开展体验</div>
               <div className="item">帮助</div>

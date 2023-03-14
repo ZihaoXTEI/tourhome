@@ -7,15 +7,22 @@ const resolve = (pathName) => path.resolve(__dirname, pathName)
 module.exports = {
 	plugins: [
 		{
-			plugin: CracoLessPlugin
+			plugin: CracoLessPlugin,
+			options: {
+				lessLoaderOptions: {
+					lessOptions: {
+						modifyVars: {},
+						javascriptEnabled: true
+					}
+				}
+			}
 		}
 	],
 	webpack: {
 		alias: {
 			'@': resolve('src'),
 			components: resolve('src/components'),
-			utils: resolve('src/utils'),
-			'@mui/styled-engine': '@mui/styled-engine-sc'
+			utils: resolve('src/utils')
 		}
 	}
 }

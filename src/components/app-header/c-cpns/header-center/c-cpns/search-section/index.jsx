@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
+
 import { SearchSectionWrapper } from './style'
 
 const SearchSection = memo((props) => {
@@ -16,6 +17,7 @@ const SearchSection = memo((props) => {
                 <div className="desc">{item.desc}</div>
               </div>
 
+              {/* 判断是否是最后一个，如果不是需要添加一条竖线 */}
               {index !== searchInfoList.length - 1 && <div className='divider'></div>}
             </div>
           )

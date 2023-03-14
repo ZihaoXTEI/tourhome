@@ -29,28 +29,28 @@ export const LongForItemWrapper = styled.div`
 			rgba(0, 0, 0, 0) 3%,
 			rgb(0, 0, 0) 100%
 		);
+	}
 
-		.info {
-			position: absolute;
-			left: 8px;
-			right: 8px;
-			bottom: 0;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			padding: 0 24px 24px;
-			color: #fff;
+	.info {
+		position: absolute;
+		left: 8px;
+		right: 8px;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0 24px 24px;
+		color: #fff;
 
-			.city {
-				font-size: 18px;
-				font-weight: 600;
-			}
+		.city {
+			font-size: 18px;
+			font-weight: 600;
+		}
 
-			.price {
-				font-size: 14px;
-				margin-top: 5px;
-			}
+		.price {
+			font-size: 14px;
+			margin-top: 5px;
 		}
 	}
 `
